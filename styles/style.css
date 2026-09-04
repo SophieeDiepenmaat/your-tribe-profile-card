@@ -46,7 +46,8 @@ article {
   min-width: 20em;
   
   border-radius: 1rem;
-  background: #b5e4f6;
+  background: rgb(42, 93, 248);
+  background: linear-gradient(0deg, #b5e4f6 40%, rgb(42, 93, 248) ) ;
   box-shadow: 0 0 20px 20px rgb(0 0 0 / .1);
   
   transition: .25s;
@@ -268,6 +269,7 @@ article > p {
   padding: 3rem 2rem;
   
   background: rgb(255 255 255 / 0.5);
+  background: linear-gradient(0deg, rgb(255 255 255 / 0.5) 40%, #b5e4f6) ;
   border-radius: 0 0 1rem 1rem;
   text-align: center;
 }
