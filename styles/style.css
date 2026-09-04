@@ -7,7 +7,7 @@
 /* Dit verwijst naar het <html> element. De <html> krijgt een lichtgele achtergrond. */
 
 html {
-  background:lightyellow;
+  background:#f5f3ff;
 }
 
 /* BODY */
@@ -19,9 +19,13 @@ body {
   justify-content: center;
   align-items: center;
   
-  height: 100vh;
+  min-height: 100vh;
+  margin: 0;
+  padding: 2rem 1rem;
+
   font-family: open sans;
-  color: #10214e; /* de tekst kleur wordt in hex kleuren bepaald. */
+  color: #243B5A; /* de tekst kleur wordt in hex kleuren bepaald. */
+  
 }
 
 /* ARTICLE */
@@ -38,12 +42,11 @@ article {
   justify-content: end;
   
   width: 50vw;
-  max-width: 25em;
+  max-width: 40em;
   min-width: 20em;
   
   border-radius: 1rem;
-  background: rgb(0 239 255);
-  background: linear-gradient(0deg, rgb(0 239 255) 40%, #4e54c8 100%);
+  background: #b5e4f6;
   box-shadow: 0 0 20px 20px rgb(0 0 0 / .1);
   
   transition: .25s;
@@ -56,22 +59,44 @@ header {
   flex-direction: column;
   align-items: center;
   justify-content: end;
+  
+  width: 100%;
+  padding: 2rem;
 }
 
 /* H1 */
 /* Hier krijgt het <h1> element de styling. */
 h1 {
-  margin: 2rem 0 1rem 0; /* Margin is de ruimte om het element heen. Boven beginnen, met de klok mee */
-  
-  color: rgb(0 239 255); /* De tekst kleur wordt in rgb() bepaald. */
+  margin: 0; /* Margin is de ruimte om het element heen. Boven beginnen, met de klok mee */
+  font-size: 2.5rem;
+  color: #243B5A; /* De tekst kleur wordt in rgb() bepaald. */
+  text-align: center;
+}
+
+.opleiding {
+  margin-top: 0.5rem;
+  padding: 0.3rem 1rem;
+
+  background: #2575e3;
+  color: white;
+
+  border-radius: 2rem;
 }
 
 /* P */
 /* Hier krijgt de <p> met de class slogan de styling. */
 /* Om een element met class te selecteren gebruik je een . in de selector */
 p.slogan {
+  width: 100%;
+  margin-top: 1.5rem;
+  padding: 1.5rem;
+
   font-size:1.25em;
   color:#030711;
+  text-align: center;
+
+  border: 2px solid #d8cff5;
+  border-radius: 1.5rem;
 }
 
 /* BUTTON */
@@ -87,7 +112,7 @@ button {
   
   border: none;
   border-radius: 50%; /* De border-radius geeft de <button> ronde hoekjes. */
-  background: rgb(0 239 255);
+  background: rgb(130, 173, 205);
   
   scale:.8;
   
@@ -133,15 +158,16 @@ button svg:nth-of-type(2) {
 /* IMG */
 /* Hier krijgt het <img> element de styling. */
 img {
-  position: relative;
-  top: 2rem;
+  width: 192px;
+  height: 192px;
+
+  margin-top: 32px;
+
+  object-fit: fill;
   
-  width: 10em;
-  height: auto;
-  
-  border: 5px solid #fff;
-  border-radius: 10em;
-  box-shadow: 0 0 2px 2px rgb(0 0 0 /.2);
+  border: 5px solid white;
+  border-radius: 50%;
+  box-shadow: 0 0 4px 2px rgb(0 0 0 /.2);
   
   transition: 1s .15s; /* Transition Shorthand notation: Transities op het img element duren 1 seconde en beginnen 0.15 seconde later */
 }
@@ -151,56 +177,81 @@ img {
 /* De Description List element (DL) is een lijst met termen en beschrijvingen. */
 /* In deze DL staan 3 groepen met code skills, in CSS is de layout van de DT elementen met een Grid gepositioneerd.  */
 
-dl {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-areas:
-    "html-dd css-dd js-dd"
-    "html-dt css-dt js-dt"
-    ;
-  justify-items: center;
-  align-items: start;
-  
+.skills {
   width: 100%;
-  margin-top: -3rem;
-  margin-bottom: 0;
-  padding: 5rem 0 3rem;
-  
+  padding: 2rem;
   text-align: center;
-  background: rgb(255 255 255);
 
-  dt {
-    margin-top: .25rem;
-    padding-top: .25rem;
-    
-    border-top: 1px solid rgb(0 0 0 / 0.3);
-    font-weight: bold;
-    
-    &:nth-of-type(1) {
-      grid-area: html-dt;
-    }
-    
-    &:nth-of-type(2) {
-      grid-area: css-dt;
-      translate:0 1rem;
-    }
-    
-    &:nth-of-type(3) {
-      grid-area: js-dt;
-    }
-  }
 
-  dd {
-    margin: 0;
-    padding-left: .3rem;
-    
-    transition: .25s .3s;
-    
-    &:nth-of-type(2) {
-      translate:0 1rem;
-    }
-  }
+  
 }
+
+.skill-lijst {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+
+ 
+}
+
+.skill-lijst li {
+  padding: 1rem .5rem;
+
+  background: #f1edff;
+  border-radius: 1rem;
+
+  background-color: #f1edff;
+}
+
+.skill-lijst span {
+  display: block;
+  font-size: 2rem;
+}
+
+.skill-lijst h3 {
+  margin: .5rem 0;
+}
+
+.skill-lijst p {
+  font-size: .85rem;
+}
+
+.interesses {
+  width: 100%;
+  padding: 2rem;
+  text-align: center;
+}
+
+.interesse-lijst{
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1rem;
+
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.interesse-lijst li {
+  padding: 1rem .5rem;
+
+  background: #f1edff;
+  border-radius: 1rem;
+
+  background-color: #f1edff;
+}
+
+.interesse-lijst span {
+  display: block;
+  font-size: 1.5rem;
+}
+
+
+
 
 /* P */
 /* Hier krijgen alle <p> elementen een styling. */
@@ -241,10 +292,8 @@ body.is-expanded button svg:nth-of-type(2) {
   transition-delay: .25s;
 }
 
-body.is-expanded dl dd {
-  font-size: 1.75em;
-}
 
 body.is-expanded img {
   width: 15em;
 }
+
